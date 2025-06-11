@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+struct student {
+	char name[50], phone[50];
+	union student1 {
+		char rrn[50], num[50];
+	};
+};
+
+struct student a[2];
+
+int main() {
+	int q;
+
+	for (int i = 0; i < 2; i++) {
+		printf("주민번호 입력: 1, 학번 입력: 2  ");
+		scanf("%d", &q);
+		getchar();
+		if (q == 1) {
+			printf("주민번호 : ");
+			gets_s(a[i].rrn, 50);
+		}
+		else {
+			printf("학번 : ");
+			gets_s(a[i].num, 50);
+		}
+		printf("이름 : ");
+		gets_s(a[i].name, 50);
+		printf("전화번호 : ");
+		gets_s(a[i].phone, 50);
+		printf("\n");
+	}
+	return 0;
+}
